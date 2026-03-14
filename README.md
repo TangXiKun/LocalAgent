@@ -11,17 +11,6 @@
 </div>
 
 ---
-## Demos
-#### demo1_优化日程表
-<video src="demo/demo1_优化日程表.mp4" controls="controls" width="500" height="300"></video>
-
-#### demo2_处理文件
-<video src="demo/demo2_处理文件.mp4" controls="controls" width="500" height="300"></video>
-
-#### demo3_数据可视化
-<video src="demo/demo3_数据可视化.mp4" controls="controls" width="500" height="300"></video>
-
----
 
 ## 📖 项目简介
 
