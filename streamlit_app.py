@@ -35,8 +35,32 @@ def AI_response():
 
 
 if "messages" not in st.session_state:
-    st.session_state.MODEL = "glm-4.7-flash:latest"
-    # st.session_state.MODEL = "qwen3-coder:latest"
+
+    st.session_state.client = Client(host="http://localhost:11434/")
+
+    st.session_state.RECOMMAND_MODELS = [
+        "glm-4.7-flash:latest",
+        "qwen3-coder:latest",
+        "qwen3-coder:30b",
+        "qwen3:latest",
+        "qwen3:8b",
+        "qwen3:4b",
+    ]
+
+    st.session_state.model_list = [
+        i["model"] for i in st.session_state.client.list()["models"]
+    ]
+
+    if st.session_state.model_list:
+        st.session_state.MODEL = st.session_state.model_list[0]
+        for i in st.session_state.RECOMMAND_MODELS:
+            if i in st.session_state.model_list:
+                st.session_state.MODEL = i
+                break
+    else:
+        st.error("No avilable ollama models, please download one eg.`ollama pull qwen3:4b`")
+        raise Exception("No avilable ollama models")
+
     st.session_state.MODEL_NAME = "Assistant"
     st.session_state.PROMPT = open("./prompt/prompt.md", "r", encoding="utf-8").read()
     st.session_state.IS_CONTINUE = False
@@ -58,8 +82,6 @@ if "messages" not in st.session_state:
     st.session_state.PROMPT = st.session_state.PROMPT.replace(
         "$KNOWLEDGE$", st.session_state.KNOWLEDGE
     )
-
-    st.session_state.client = Client(host="http://localhost:11434/")
 
     print(st.session_state.PROMPT)
 
@@ -133,9 +155,11 @@ example2 = """- `✅ Calculate 160968*(23516-75061)`
 - `✅ On the desktop, there is 'data.xlsx', which records two sets of data corresponding to each time point. Please plot a line chart and a pie chart.`"""
 
 with st.sidebar:
-    model_list = [i["model"] for i in st.session_state.client.list()["models"]]
+
     st.session_state.MODEL = st.selectbox(
-        "Ollama Model", options=model_list, index=model_list.index(st.session_state.MODEL)
+        "Ollama Model",
+        options=st.session_state.model_list,
+        index=st.session_state.model_list.index(st.session_state.MODEL),
     )
     st.divider()
     with st.expander(label="Function Introduction"):
@@ -151,9 +175,10 @@ with st.sidebar:
             if st.session_state.messages:
                 st.session_state.messages = st.session_state.messages[:-1]
                 st.rerun()
+    st.markdown("\n \n \nhttps://github.com/TangXiKun/LocalAgent")
 
 st.write("# :material/layers: LocalAgent")
-st.markdown("### `developed by 唐希鲲`")
+st.markdown("### `developed by 唐希鲲(Xikun Tang)`")
 st.markdown("> —— A powerful tool for operating computers and handling work tasks")
 st.divider()
 
@@ -216,12 +241,3 @@ else:
                 st.session_state.IS_CONTINUE = True
 
     st.rerun()
-
-
-# 计算165165*(65516-15161)
-# 在桌面上做一个ppt来介绍你自己
-# 把桌面上的word文档转换为pdf
-# 桌面上有data.xlsx,里面是ABCD四个小组中每个人的得分,请在excel里统计各个组别75到100分这个区间的人数,并在excel里面插入柱状图和饼图
-# 把桌面上的单词表图片按词性整理到桌面上的一个word文件中
-# 桌面上有"data.xlsx",记录了每个时间点对应的两组数据,请绘制折线图,分析这两组数据与时间的关系,并尝试用函数拟合
-# 今天是3月7日,请读取桌面上a.jpg的日程表,然后进行优化,生成一个更加美观且充实的计划表(word文档)
