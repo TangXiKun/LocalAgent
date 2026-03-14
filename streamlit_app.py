@@ -42,6 +42,7 @@ if "messages" not in st.session_state:
         "glm-4.7-flash:latest",
         "qwen3-coder:latest",
         "qwen3-coder:30b",
+        "qwen3.5:9b",
         "qwen3:latest",
         "qwen3:8b",
         "qwen3:4b",
@@ -137,17 +138,7 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-example1 = """| Function Category         | Operation Example          |
-| ------------------------- | -------------------------- |
-| **File Operations**     | ✅ Office Files           |
-| **Code Execution**      | ✅ Data Process        |
-| **Image Recognition**   | ✅ Markdown           |
-| **Document Conversion** | ✅ Word to PDF            |
-| **Chart Generation**    | ✅ Bar Chart              |
-| **System Interaction**  | ✅ PowerShell             |
-| **Other...**            | ✅ More ...     |"""
-
-example2 = """- `✅ Calculate 160968*(23516-75061)`
+example = """- `✅ Calculate 160968*(23516-75061)`
 - `✅ Create a HTML Snake game`
 - `✅ Make a PPT to introduce yourself`
 - `✅ Convert all Word documents on the desktop to PDF and save them in one folder`
@@ -162,10 +153,10 @@ with st.sidebar:
         index=st.session_state.model_list.index(st.session_state.MODEL),
     )
     st.divider()
-    with st.expander(label="Function Introduction"):
-        st.markdown(example1)
     with st.expander(label="Task Examples"):
-        st.markdown(example2)
+        st.markdown(example)
+    with st.expander(label="Local Knowledge"):
+        st.write(st.session_state.KNOWLEDGE.split("\n"))
     st.markdown("> Tip: To stop, click `Stop` and then `...`, `Rerun`")
 
     if st.session_state.IS_CONTINUE:
@@ -175,7 +166,13 @@ with st.sidebar:
             if st.session_state.messages:
                 st.session_state.messages = st.session_state.messages[:-1]
                 st.rerun()
-    st.markdown("\n \n \nhttps://github.com/TangXiKun/LocalAgent")
+    st.divider()
+    st.link_button(
+        "GitHub project link",
+        "https://github.com/TangXiKun/LocalAgent",
+        type="tertiary",
+        width="stretch",
+    )
 
 st.write("# :material/layers: LocalAgent")
 st.markdown("### `developed by 唐希鲲(Xikun Tang)`")
