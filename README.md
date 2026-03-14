@@ -275,7 +275,7 @@ st.session_state.available_functions["my_new_tool"] = my_new_tool
 
 ## 📧 联系方式
 
-2297468967@qq.com
+QQ邮箱: 2297468967@qq.com
 
 ---
 
