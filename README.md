@@ -49,6 +49,10 @@ cd 项目目录
 python -m venv .venv
 .venv\Scripts\activate
 ```
+如果遇到"因为在此系统上禁止运行脚本"的错误,以管理员身份执行以下代码再重试
+```
+set-ExecutionPolicy RemoteSigned
+```
 
 3. **初始化外部文件**
 ```
