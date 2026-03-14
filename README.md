@@ -107,8 +107,8 @@ pip install -r requirements.txt
 ✅ 创建一个 HTML 贪吃蛇游戏
 ✅ 制作一个 PPT 来介绍你自己
 ✅ 把桌面上的 Word 文档转换为 PDF
-✅ 整理桌面上的单词表图片按词整理性到 Word 文件
-✅ 根据 data.xlsx 绘制折线图和饼图
+✅ 按词性整理桌面上的单词表图片到 Word 文件
+✅ 根据桌面上 data.xlsx 绘制折线图和饼图
 ```
 
 ---
