@@ -1,0 +1,27 @@
+[theme]
+primaryColor = "#0078D7"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F0F2F6"
+textColor = "#262730"
+baseRadius = "medium"
+codeFont = "maple mono, consolas, menlo, ubuntu mono"
+font = "更纱黑体 SC, 微软雅黑, San Francisco, ubuntu mono"
+baseFontSize = 17
+
+headingFontSizes = [
+    "2.2rem", # h1
+    "1.75rem", # h2
+    "1.25rem", # h3
+    "1rem", # h4
+    "0.8rem", # h5
+    "0.6rem", # h6
+]
+
+headingFontWeights = [
+    800,
+    800,
+    800,
+    800,
+    800,
+    800,
+]
