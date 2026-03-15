@@ -16,24 +16,7 @@
 
 <img src="screenshot.png">
 
----
-## Demos
-
-##### demo1: optimize_schedule
-<video controls>
-   <source src="./demos/demo1_优化日程表.mp4" type="video/mp4">
-</video>
-
-##### demo2: rename_files
-<video controls>
-   <source src="./demos/demo2_处理文件.mp4" type="video/mp4">
-</video>
-
-##### demo3: data_visualize
-<video controls>
-   <source src="./demos/demo3_数据可视化.mp4" type="video/mp4">
-</video>
----
+## [📺 Video Demos](https://github.com/TangXiKun/LocalAgent/tree/main/demos)
 
 ## 📖 Project Overview
 

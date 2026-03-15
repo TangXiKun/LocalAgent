@@ -16,25 +16,7 @@
 
 <img src="screenshot.png">
 
----
-## 示例
-
-##### demo1: 优化日程表
-<video controls>
-   <source src="./demos/demo1_优化日程表.mp4" type="video/mp4">
-</video>
-
-##### demo2: 处理文件
-<video controls>
-   <source src="./demos/demo2_处理文件.mp4" type="video/mp4">
-</video>
-
-##### demo3: 数据可视化
-<video controls>
-   <source src="./demos/demo3_数据可视化.mp4" type="video/mp4">
-</video>
----
----
+## [📺 Demo 视频](https://github.com/TangXiKun/LocalAgent/tree/main/demos)
 
 ## 📖 项目简介
 
