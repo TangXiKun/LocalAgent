@@ -39,6 +39,7 @@ if "messages" not in st.session_state:
     st.session_state.client = Client(host="http://localhost:11434/")
 
     st.session_state.RECOMMAND_MODELS = [
+        "qwen3.5:35b",
         "glm-4.7-flash:latest",
         "qwen3-coder:latest",
         "qwen3-coder:30b",
@@ -175,7 +176,7 @@ with st.sidebar:
     )
 
 st.write("# :material/layers: LocalAgent")
-st.markdown("### `developed by 唐希鲲(Xikun Tang)`")
+st.markdown("### `developed by 唐希鲲 (Xikun Tang)`")
 st.markdown("> —— A powerful tool for operating computers and handling work tasks")
 st.divider()
 
