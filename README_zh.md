@@ -14,6 +14,28 @@
 
 ---
 
+<img src="screenshot.png">
+
+---
+## 示例
+
+##### demo1: 优化日程表
+<video controls>
+   <source src="./demos/demo1_优化日程表.mp4" type="video/mp4">
+</video>
+
+##### demo2: 处理文件
+<video controls>
+   <source src="./demos/demo2_处理文件.mp4" type="video/mp4">
+</video>
+
+##### demo3: 数据可视化
+<video controls>
+   <source src="./demos/demo3_数据可视化.mp4" type="video/mp4">
+</video>
+---
+---
+
 ## 📖 项目简介
 
 LocalAgent 是一个基于 **Ollama 本地大模型** 和 **Streamlit** 构建的智能体应用。它能够理解用户的自然语言指令，自动调用各种工具来完成复杂的电脑操作任务，如文件处理、文档转换、代码执行、图像识别等。
@@ -52,12 +74,12 @@ python -m venv .venv
 .venv\Scripts\activate
 ```
 如果遇到"因为在此系统上禁止运行脚本"的错误,以管理员身份执行以下代码再重试
-```
+```bash
 set-ExecutionPolicy RemoteSigned
 ```
 
 3. **初始化外部文件**
-```
+```bash
 .\setup.cmd
 ```
 
@@ -70,7 +92,7 @@ pip install -r requirements.txt
 5. **启动应用**
 
 方式一：使用启动脚本(可以双击运行)
-```cmd
+```bash
 .\launch.cmd
 ```
 
@@ -182,15 +204,11 @@ ollama pull qwen3:4b-instruct # 2.5G,CPU可运行,不输出思考过程
 
 ## 💡 使用技巧
 
-1. **停止任务**：点击 `Stop` 按钮，然后在 `...` 菜单中选择 `Rerun`
+1. **停止任务**：点击 `Stop` 按钮，然后在 `⋮` 菜单中选择 `Rerun`
 
-2. **创建可复用工具**：使用 `create_python_tool` 将常用代码封装为 CLI 工具，提高效率
+2. **创建可复用工具**：让AI把常用代码封装为 CLI 工具，提高效率
 
-3. **修复代码错误**：使用 `replace_file_content` 快速修复 Python 代码的 bug
-
-4. **添加知识**：使用 `add_knowledge` 记录解决问题的技巧、系统信息等
-
-5. **路径规范**：所有文件路径请使用绝对路径，Windows 系统使用反斜杠 `\`
+3. **添加知识**：任务结束后让AI记录解决问题的技巧、系统信息等
 
 ---
 

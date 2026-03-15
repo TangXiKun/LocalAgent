@@ -158,7 +158,7 @@ with st.sidebar:
         st.markdown(example)
     with st.expander(label="Local Knowledge"):
         st.write(st.session_state.KNOWLEDGE.split("\n"))
-    st.markdown("> Tip: To stop, click `Stop` and then `...`, `Rerun`")
+    st.markdown("> To stop, click `Stop` then `⋮`, `Rerun`")
 
     if st.session_state.IS_CONTINUE:
         st.button("remove last message", width="stretch", disabled=True)

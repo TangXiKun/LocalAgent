@@ -14,6 +14,27 @@
 
 ---
 
+<img src="screenshot.png">
+
+---
+## Demos
+
+##### demo1: optimize_schedule
+<video controls>
+   <source src="./demos/demo1_优化日程表.mp4" type="video/mp4">
+</video>
+
+##### demo2: rename_files
+<video controls>
+   <source src="./demos/demo2_处理文件.mp4" type="video/mp4">
+</video>
+
+##### demo3: data_visualize
+<video controls>
+   <source src="./demos/demo3_数据可视化.mp4" type="video/mp4">
+</video>
+---
+
 ## 📖 Project Overview
 
 LocalAgent is an intelligent agent application built on **local large models via Ollama** and **Streamlit**. It understands natural language instructions from users and automatically invokes various tools to perform complex computer operations, such as file handling, document conversion, code execution, image recognition, and more.
@@ -53,12 +74,12 @@ python -m venv .venv
 ```
 
 If you encounter the error "Execution of scripts is disabled on this system," run the following command as administrator and retry:
-```
+```bash
 set-ExecutionPolicy RemoteSigned
 ```
 
 3. **Initialize external files**
-```
+```bash
 .\setup.cmd
 ```
 
@@ -71,7 +92,7 @@ pip install -r requirements.txt
 5. **Launch the application**
 
 Option 1: Use the launch script (can be double-clicked)
-```cmd
+```bash
 .\launch.cmd
 ```
 
@@ -183,15 +204,11 @@ The project depends on the external directory `D:/ExternalFiles/`:
 
 ## 💡 Usage Tips
 
-1. **Stop a task**: Click the `Stop` button, then select `Rerun` from the `...` menu.
+1. **Stop a task**: Click the `Stop` button, then select `Rerun` from the `⋮` menu.
 
-2. **Create reusable tools**: Use `create_python_tool` to encapsulate frequently used code into CLI tools for improved efficiency.
+2. **Create reusable tools**: Ask AI to encapsulate frequently used code into CLI tools for improved efficiency.
 
-3. **Fix code errors**: Use `replace_file_content` to quickly patch bugs in Python code.
-
-4. **Add knowledge**: Use `add_knowledge` to record problem-solving techniques, system information, etc.
-
-5. **Path conventions**: Always use absolute paths. On Windows, use backslashes `\`.
+3. **Add knowledge**: Ask AI to record problem-solving techniques, system information, etc.
 
 ---
 
